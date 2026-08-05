@@ -105,6 +105,7 @@ body {
 /* ============ HERO SECTION ============ */
 
 .hero {
+    padding-top: 120px;
     position: relative;
     min-height: 100vh;
     display: flex;

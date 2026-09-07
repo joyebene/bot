@@ -1465,6 +1465,278 @@ body {
     font-size: 0.9rem;
 }
 
+/* =========================================
+   PROOF / SCREENSHOTS SECTION
+========================================= */
+
+.proof-section {
+    padding: 110px 0;
+    background:
+        radial-gradient(circle at 20% 20%, rgba(168, 85, 247, 0.08), transparent 35%),
+        radial-gradient(circle at 80% 80%, rgba(234, 179, 8, 0.08), transparent 35%),
+        #08080d;
+    position: relative;
+    overflow: hidden;
+}
+
+.proof-section .container {
+    position: relative;
+    z-index: 2;
+}
+
+.proof-subtitle {
+    max-width: 650px;
+    margin: -25px auto 55px;
+    text-align: center;
+    color: #a7a7b3;
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+.screenshots-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    align-items: start;
+}
+
+.screenshot-card {
+    position: relative;
+    border-radius: 18px;
+    overflow: hidden;
+    background: #111118;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.35),
+        0 0 30px rgba(168, 85, 247, 0.05);
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+
+.screenshot-card:hover {
+    transform: translateY(-10px);
+    border-color: rgba(168, 85, 247, 0.55);
+    box-shadow:
+        0 25px 60px rgba(0, 0, 0, 0.5),
+        0 0 35px rgba(168, 85, 247, 0.15);
+}
+
+.screenshot-card img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    background: #f5f1eb;
+    transition: transform 0.5s ease;
+}
+
+.screenshot-card:hover img {
+    transform: scale(1.025);
+}
+
+.screenshot-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background: rgba(8, 8, 13, 0.72);
+    color: white;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    -webkit-backdrop-filter: blur(3px);
+    backdrop-filter: blur(3px);
+}
+
+.screenshot-card:hover .screenshot-overlay {
+    opacity: 1;
+}
+
+.screenshot-overlay i {
+    width: 52px;
+    height: 52px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #a855f7, #f59e0b);
+    font-size: 19px;
+}
+
+.screenshot-overlay span {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* Disclaimer */
+.proof-note {
+    max-width: 850px;
+    margin: 45px auto 0;
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.025);
+    color: #888894;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.proof-note i {
+    color: #a855f7;
+    flex-shrink: 0;
+}
+
+
+/* =========================================
+   LIGHTBOX
+========================================= */
+
+.screenshot-lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    background: rgba(0, 0, 0, 0.94);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.screenshot-lightbox.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.screenshot-lightbox img {
+    max-width: min(90vw, 900px);
+    max-height: 90vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 12px;
+    box-shadow: 0 30px 100px rgba(0, 0, 0, 0.7);
+}
+
+.lightbox-close,
+.lightbox-prev,
+.lightbox-next {
+    position: absolute;
+    border: none;
+    color: white;
+    background: rgba(255, 255, 255, 0.1);
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    transition: all 0.25s ease;
+}
+
+.lightbox-close:hover,
+.lightbox-prev:hover,
+.lightbox-next:hover {
+    background: linear-gradient(135deg, #a855f7, #f59e0b);
+    transform: scale(1.08);
+}
+
+.lightbox-close {
+    top: 25px;
+    right: 30px;
+}
+
+.lightbox-prev {
+    left: 30px;
+}
+
+.lightbox-next {
+    right: 30px;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 1100px) {
+    .screenshots-grid {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 850px;
+        margin: auto;
+    }
+}
+
+@media (max-width: 600px) {
+    .proof-section {
+        padding: 80px 0;
+    }
+
+    .screenshots-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        max-width: 420px;
+    }
+
+    .proof-subtitle {
+        font-size: 15px;
+        margin-bottom: 35px;
+    }
+
+    .proof-note {
+        margin: 30px 15px 0;
+        padding: 14px;
+        font-size: 12px;
+    }
+
+    .screenshot-overlay {
+        display: none;
+    }
+
+    .screenshot-lightbox {
+        padding: 20px;
+    }
+
+    .screenshot-lightbox img {
+        max-width: 95vw;
+        max-height: 85vh;
+    }
+
+    .lightbox-prev,
+    .lightbox-next {
+        width: 42px;
+        height: 42px;
+    }
+
+    .lightbox-prev {
+        left: 12px;
+    }
+
+    .lightbox-next {
+        right: 12px;
+    }
+
+    .lightbox-close {
+        top: 15px;
+        right: 15px;
+    }
+}
+
+
 /* ============ RESPONSIVE ============ */
 @media (max-width: 768px) {
     .hamburger {
@@ -1553,20 +1825,20 @@ body {
         grid-template-columns: repeat(2, 1fr);
     }
 
-      .testimonial-card{
-        padding:25px;
+    .testimonial-card {
+        padding: 25px;
     }
 
-    .testimonial-author{
-        gap:12px;
+    .testimonial-author {
+        gap: 12px;
     }
 
-    .author-avatar{
-        width:48px;
-        height:48px;
+    .author-avatar {
+        width: 48px;
+        height: 48px;
     }
 
-     .testimonials-grid {
+    .testimonials-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 }
@@ -1720,7 +1992,7 @@ body {
         margin: 0 auto 18px;
     }
 
-     .testimonials-grid {
+    .testimonials-grid {
         grid-template-columns: 1fr;
         gap: 20px;
     }

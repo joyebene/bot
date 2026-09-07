@@ -12,6 +12,7 @@
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="/images/logo.jpeg">
 </head>
 
 <body>
@@ -31,7 +32,10 @@
                     <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
                     <li><a href="#faq" class="nav-link">FAQ</a></li>
                 </ul>
-                <button class="cta-button">Get Started</button>
+                <a href="https://chat.whatsapp.com/D7TW5NjwmG1AH8Nt92cJYg?s=cl&p=i&mlu=4&ilr=4" class="cta-button"
+                    target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
+                    Get Started
+                </a>
                 <div class="hamburger">
                     <span></span>
                     <span></span>
@@ -104,13 +108,13 @@
 
                     <div class="hero-buttons">
 
-                        <button class="btn btn-primary">
-                            <i class="fas fa-rocket"></i>
+                        <a href="https://chat.whatsapp.com/D7TW5NjwmG1AH8Nt92cJYg?s=cl&p=i&mlu=4&ilr=4"
+                            class="btn btn-primary" target="_blank" rel="noopener noreferrer"
+                            style="text-decoration: none;">
                             Start Trading
-                        </button>
+                        </a>
 
                         <button class="btn btn-secondary">
-                            <i class="fas fa-play"></i>
                             Watch Demo
                         </button>
 
@@ -414,7 +418,8 @@
                         <li>✓ Email Support</li>
                         <li>✓ Monthly Updates</li>
                     </ul>
-                    <button class="btn btn-secondary">Buy Now</button>
+                    <a href="https://chat.whatsapp.com/D7TW5NjwmG1AH8Nt92cJYg?s=cl&p=i&mlu=4&ilr=4" target="_blank"
+                        rel="noopener noreferrer" class="btn btn-secondary" style="text-decoration: none;">Buy Now</a>
                 </div>
                 <div class="pricing-card featured">
                     <div class="featured-badge">MOST POPULAR</div>
@@ -431,7 +436,8 @@
                         <li>✓ Priority Support</li>
                         <li>✓ Free Updates Forever</li>
                     </ul>
-                    <button class="btn btn-primary">Buy Now</button>
+                    <a href="https://chat.whatsapp.com/D7TW5NjwmG1AH8Nt92cJYg?s=cl&p=i&mlu=4&ilr=4" target="_blank"
+                        rel="noopener noreferrer" class="btn btn-primary" style="text-decoration: none;">Buy Now</a>
                 </div>
             </div>
         </div>
@@ -540,6 +546,82 @@
         </div>
     </section>
 
+    <!-- PROOF / SCREENSHOTS -->
+    <section class="proof-section" id="proof">
+        <div class="container">
+
+            <span class="section-tag">REAL USER RESULTS</span>
+
+            <h2 class="section-title">
+                See What <span class="gradient-text">Our Traders Are Saying</span>
+            </h2>
+
+            <p class="proof-subtitle">
+                Real conversations and feedback from traders using Orchid AI Bot.
+            </p>
+
+            <div class="screenshots-grid">
+
+                <!-- Screenshot 1 -->
+                <div class="screenshot-card">
+                    <img src="images/testimonial-1.jpeg" alt="Orchid AI Bot trader testimonial" loading="lazy"
+                        onclick="openScreenshot(this)">
+                    <div class="screenshot-overlay">
+                        <i class="fas fa-expand"></i>
+                        <span>View Screenshot</span>
+                    </div>
+                </div>
+
+                <!-- Screenshot 2 -->
+                <div class="screenshot-card">
+                    <img src="images/testimonial-2.jpeg" alt="Orchid AI Bot trader feedback" loading="lazy"
+                        onclick="openScreenshot(this)">
+                    <div class="screenshot-overlay">
+                        <i class="fas fa-expand"></i>
+                        <span>View Screenshot</span>
+                    </div>
+                </div>
+
+                <!-- Screenshot 3 -->
+                <div class="screenshot-card">
+                    <img src="images/testimonial-3.jpeg" alt="Orchid AI Bot trading results" loading="lazy"
+                        onclick="openScreenshot(this)">
+                    <div class="screenshot-overlay">
+                        <i class="fas fa-expand"></i>
+                        <span>View Screenshot</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="proof-note">
+                <i class="fas fa-circle-info"></i>
+                <span>
+                    Screenshots show individual user experiences and are not a guarantee
+                    of future trading results.
+                </span>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SCREENSHOT LIGHTBOX -->
+    <div class="screenshot-lightbox" id="screenshotLightbox">
+        <button class="lightbox-close" onclick="closeScreenshot()">
+            <i class="fas fa-times"></i>
+        </button>
+
+        <img id="lightboxImage" src="" alt="Enlarged testimonial screenshot">
+
+        <button class="lightbox-prev" onclick="previousScreenshot()">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+
+        <button class="lightbox-next" onclick="nextScreenshot()">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+    </div>
+
+
     <!-- FAQ -->
     <section class="faq" id="faq">
         <div class="container">
@@ -602,7 +684,9 @@
             <div class="cta-content">
                 <h2>Ready to Start Earning?</h2>
                 <p>Join thousands of successful traders</p>
-                <button class="btn btn-primary btn-large">Buy Orchid AI Bot Now</button>
+                <a href="https://chat.whatsapp.com/D7TW5NjwmG1AH8Nt92cJYg?s=cl&p=i&mlu=4&ilr=4" target="_blank"
+                    rel="noopener noreferrer" class="btn btn-primary btn-large" style="text-decoration: none;">Buy
+                    Orchid AI Bot Now</a>
                 <p class="cta-guarantee">✓ 30 Days Money Back Guarantee</p>
             </div>
         </div>
@@ -734,6 +818,84 @@
             });
         });
     </script>
+
+    <script>
+        const screenshotImages = [
+            "images/testimonial-1.jpeg",
+            "images/testimonial-2.jpeg",
+            "images/testimonial-3.jpeg"
+        ];
+
+        let currentScreenshot = 0;
+
+        function openScreenshot(image) {
+            const lightbox = document.getElementById("screenshotLightbox");
+            const lightboxImage = document.getElementById("lightboxImage");
+
+            currentScreenshot = screenshotImages.indexOf(image.getAttribute("src"));
+
+            if (currentScreenshot === -1) {
+                currentScreenshot = 0;
+            }
+
+            lightboxImage.src = screenshotImages[currentScreenshot];
+            lightbox.classList.add("active");
+
+            document.body.style.overflow = "hidden";
+        }
+
+        function closeScreenshot() {
+            document
+                .getElementById("screenshotLightbox")
+                .classList.remove("active");
+
+            document.body.style.overflow = "";
+        }
+
+        function nextScreenshot() {
+            currentScreenshot =
+                (currentScreenshot + 1) % screenshotImages.length;
+
+            document.getElementById("lightboxImage").src =
+                screenshotImages[currentScreenshot];
+        }
+
+        function previousScreenshot() {
+            currentScreenshot =
+                (currentScreenshot - 1 + screenshotImages.length) %
+                screenshotImages.length;
+
+            document.getElementById("lightboxImage").src =
+                screenshotImages[currentScreenshot];
+        }
+
+        // Close when clicking outside the image
+        document.getElementById("screenshotLightbox").addEventListener("click", function (e) {
+            if (e.target === this) {
+                closeScreenshot();
+            }
+        });
+
+        // Keyboard controls
+        document.addEventListener("keydown", function (e) {
+            const lightbox = document.getElementById("screenshotLightbox");
+
+            if (!lightbox.classList.contains("active")) return;
+
+            if (e.key === "Escape") {
+                closeScreenshot();
+            }
+
+            if (e.key === "ArrowRight") {
+                nextScreenshot();
+            }
+
+            if (e.key === "ArrowLeft") {
+                previousScreenshot();
+            }
+        });
+    </script>
+
 </body>
 
 </html>

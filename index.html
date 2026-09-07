@@ -59,17 +59,17 @@
                 <div class="hero-left">
 
                     <h1 class="hero-headline">
-                        Automate Your
-                        <span class="gradient-text">Gold Trading</span>
+                        Build Your
+                        <span class="gradient-text">Gold Income Stream</span>
                         with Orchid AI Bot
                     </h1>
 
+
                     <p class="hero-subtitle">
-                        Orchid AI Bot combines <strong>Price Action</strong>,
-                        <strong>Deep Learning</strong>, and
-                        <strong>Oscillatory Indicators</strong> to identify
-                        high-probability Gold (XAU/USD) trading opportunities while
-                        intelligently managing risk.
+                        Put your Gold trading on autopilot with Orchid AI Bot.
+                        Our intelligent system analyzes <strong>XAU/USD</strong> markets,
+                        identifies trading opportunities, and executes trades automatically
+                        while applying intelligent risk management.
                     </p>
 
                     <ul class="hero-features">
@@ -399,6 +399,133 @@
             </div>
         </div>
     </section>
+
+    <!-- TRADING PROOF -->
+    <section class="trading-proof" id="trading-proof">
+        <div class="container">
+
+            <span class="section-tag">LIVE ACCOUNT PERFORMANCE</span>
+
+            <h2 class="section-title">
+                Real <span class="gradient-text">Trading Results</span>
+            </h2>
+
+            <p class="trading-proof-subtitle">
+                Explore real XAU/USD trading activity from Orchid AI Bot,
+                including executed trades, profits, losses, and account history.
+            </p>
+
+            <div class="trading-proof-grid">
+
+                <!-- Trading Account 1 -->
+                <div class="trading-proof-card">
+                    <div class="trading-proof-image">
+                        <img src="images/trading-proof-1.jpeg" alt="Orchid AI Bot XAUUSD trading history" loading="lazy"
+                            onclick="openTradingProof(this)">
+
+                        <div class="trading-proof-overlay">
+                            <i class="fas fa-expand"></i>
+                            <span>View Full History</span>
+                        </div>
+                    </div>
+
+                    <div class="trading-proof-info">
+                        <div>
+                            <i class="fas fa-chart-line"></i>
+                            <span>XAU/USD Trading</span>
+                        </div>
+
+                        <span class="proof-status">
+                            <i class="fas fa-circle"></i> Account History
+                        </span>
+                    </div>
+                </div>
+
+
+                <!-- Trading Account 2 -->
+                <div class="trading-proof-card">
+                    <div class="trading-proof-image">
+                        <img src="images/trading-proof-2.jpeg" alt="Orchid AI Bot XAUUSD profitable trades"
+                            loading="lazy" onclick="openTradingProof(this)">
+
+                        <div class="trading-proof-overlay">
+                            <i class="fas fa-expand"></i>
+                            <span>View Full History</span>
+                        </div>
+                    </div>
+
+                    <div class="trading-proof-info">
+                        <div>
+                            <i class="fas fa-coins"></i>
+                            <span>Gold Trading</span>
+                        </div>
+
+                        <span class="proof-status">
+                            <i class="fas fa-circle"></i> Trade Results
+                        </span>
+                    </div>
+                </div>
+
+
+                <!-- Trading Account 3 -->
+                <div class="trading-proof-card">
+                    <div class="trading-proof-image">
+                        <img src="images/trading-proof-3.jpeg" alt="Orchid AI Bot monthly trading performance"
+                            loading="lazy" onclick="openTradingProof(this)">
+
+                        <div class="trading-proof-overlay">
+                            <i class="fas fa-expand"></i>
+                            <span>View Full History</span>
+                        </div>
+                    </div>
+
+                    <div class="trading-proof-info">
+                        <div>
+                            <i class="fas fa-chart-column"></i>
+                            <span>Monthly Results</span>
+                        </div>
+
+                        <span class="proof-status">
+                            <i class="fas fa-circle"></i> Trading Activity
+                        </span>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="trading-proof-note">
+                <i class="fas fa-shield-halved"></i>
+
+                <p>
+                    These screenshots show historical trading activity and
+                    individual account results. Trading involves risk and
+                    past performance does not guarantee future results.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- TRADING PROOF LIGHTBOX -->
+    <div class="trading-proof-lightbox" id="tradingProofLightbox">
+
+        <button class="trading-lightbox-close" onclick="closeTradingProof()">
+            <i class="fas fa-times"></i>
+        </button>
+
+        <button class="trading-lightbox-prev" onclick="previousTradingProof()">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+
+        <img id="tradingProofLightboxImage" src="" alt="Enlarged Orchid AI Bot trading history">
+
+        <button class="trading-lightbox-next" onclick="nextTradingProof()">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+
+    </div>
+
 
     <!-- PRICING -->
     <section class="pricing" id="pricing">
@@ -895,6 +1022,133 @@
             }
         });
     </script>
+
+    <script>
+        /* =========================================
+           TRADING PROOF LIGHTBOX
+        ========================================= */
+
+        const tradingProofImages = [
+            "images/trading-proof-1.jpeg",
+            "images/trading-proof-2.jpeg",
+            "images/trading-proof-3.jpeg"
+        ];
+
+        let currentTradingProof = 0;
+
+
+        function openTradingProof(image) {
+
+            const lightbox =
+                document.getElementById("tradingProofLightbox");
+
+            const lightboxImage =
+                document.getElementById("tradingProofLightboxImage");
+
+
+            currentTradingProof =
+                tradingProofImages.indexOf(
+                    image.getAttribute("src")
+                );
+
+
+            if (currentTradingProof === -1) {
+                currentTradingProof = 0;
+            }
+
+
+            lightboxImage.src =
+                tradingProofImages[currentTradingProof];
+
+
+            lightbox.classList.add("active");
+
+            document.body.style.overflow = "hidden";
+        }
+
+
+        function closeTradingProof() {
+
+            document
+                .getElementById("tradingProofLightbox")
+                .classList.remove("active");
+
+            document.body.style.overflow = "";
+        }
+
+
+        function nextTradingProof() {
+
+            currentTradingProof =
+                (currentTradingProof + 1) %
+                tradingProofImages.length;
+
+
+            document.getElementById(
+                "tradingProofLightboxImage"
+            ).src =
+                tradingProofImages[currentTradingProof];
+        }
+
+
+        function previousTradingProof() {
+
+            currentTradingProof =
+                (currentTradingProof - 1 +
+                    tradingProofImages.length) %
+                tradingProofImages.length;
+
+
+            document.getElementById(
+                "tradingProofLightboxImage"
+            ).src =
+                tradingProofImages[currentTradingProof];
+        }
+
+
+        /* Close when clicking outside image */
+
+        document
+            .getElementById("tradingProofLightbox")
+            .addEventListener("click", function (e) {
+
+                if (e.target === this) {
+                    closeTradingProof();
+                }
+
+            });
+
+
+        /* Keyboard controls */
+
+        document.addEventListener("keydown", function (e) {
+
+            const lightbox =
+                document.getElementById("tradingProofLightbox");
+
+
+            if (!lightbox.classList.contains("active")) {
+                return;
+            }
+
+
+            if (e.key === "Escape") {
+                closeTradingProof();
+            }
+
+
+            if (e.key === "ArrowRight") {
+                nextTradingProof();
+            }
+
+
+            if (e.key === "ArrowLeft") {
+                previousTradingProof();
+            }
+
+        });
+    </script>
+
 
 </body>
 
